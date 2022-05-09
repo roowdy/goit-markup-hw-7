@@ -1,0 +1,61 @@
+.options {
+    display: flex;
+}
+
+.options>.options__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.options__link {
+    padding: 6px 22px;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+    @include font(16px, 500, 26px);
+
+    color: var(--color-titles);
+    background-color: var(--backgroud-light-color);
+
+    transition: box-shadow 250ms var(--timing-function);
+
+    &:hover,
+    &:focus {
+        color: var(--major-color-light);
+        background-color: var(--accent-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+            0px 2px 2px rgba(0, 0, 0, 0.12);
+        outline: none;
+    }
+
+    &--active {
+        color: var(--major-color-light);
+        background-color: var(--accent-color);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .options {
+        flex-wrap: wrap;
+        margin-bottom: -15px;
+    }
+
+    .options__item {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .options {
+        justify-content: center;
+
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .options {
+        margin-bottom: 50px;
+    }
+}
